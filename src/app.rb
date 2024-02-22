@@ -13,4 +13,9 @@ class App < Sinatra::Base
     get '/' do
         erb :front
     end
+
+    get '/threads/:section' do |section|
+        @section = section
+        erb :threads
+    end
 end

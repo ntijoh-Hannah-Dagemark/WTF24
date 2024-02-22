@@ -1,0 +1,12 @@
+<% if @section == "air" then verb = "Aicraft"%>
+<% elsif @section == "sea" then verb = "Boat"%>
+<% else verb = "Train" %>
+<% end%>
+<body>
+    <h2>Welcome to the <%=verb%> threads</h2>
+</body>
+<form action="/threads" method="POST">
+    <input type="text" name="title" placeholder="Post Title">
+    <input type="text" name="contents" placeholder="Post Contents">
+    <button type="submit">Submit post to thread</button>
+</form>

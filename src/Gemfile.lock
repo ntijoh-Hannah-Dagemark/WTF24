@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     base64 (0.2.0)
+    bcrypt (3.1.20)
     daemons (1.4.1)
     debug (1.9.1)
       irb (~> 1.10)
@@ -60,6 +61,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bcrypt
   debug
   rack (~> 2.2.8)
   rerun

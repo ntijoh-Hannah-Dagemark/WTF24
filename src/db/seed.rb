@@ -31,7 +31,8 @@ class Seeder
             name TEXT NOT NULL
         ); CREATE TABLE thread(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            post INTEGER NOT NULL
+            category TEXT NOT NULL,
+            postId INTEGER NOT NULL
         ); CREATE TABLE user(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             mail TEXT NOT NULL,
@@ -50,7 +51,9 @@ class Seeder
 
     def self.seed_tables
         db.execute('INSERT INTO user (mail, username, password, status) VALUES ("admin@admin.com", "Admin", "supremeaccess", "Admin")')
+        db.execute_batch('INSERT INTO post (authorID, title, content) VALUES (1, "Air Main Thread", "Welcome to the Aircraft Discussions");
+            INSERT INTO post (authorId, title, content) VALUES (1, "Naval Main Thread", "Welcome to Ocean Vessel Discussions");
+            INSERT INTO post (authorID, title, content) VALUES (1, "Railroad Main Thread", "Welcome to the Railroading Discussions")')
+        db.execute_batch('INSERT INTO thread (postId, category) VALUES (1, "air");INSERT INTO thread (postId, category) VALUES (2, "sea");INSERT INTO thread (postId, category) VALUES (3, "rail")')
     end
 end
-
-Seeder.seed!

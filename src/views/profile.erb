@@ -1,0 +1,15 @@
+<h2>Welcome <%=@user_profile["username"]%></h2>
+<div>
+    <p><%=@user_profile["mail"]%></p>
+    <p><%=@user_profile["status"]%></p>
+</div>
+<body>
+    <h2>Your Posts</h2>
+    <% for post in @user_posts do %>
+        <div>
+            <h3><%=post["id"]%></h3>
+            <h5><%=post["title"]%></h5>
+            <p><%=post["content"]%></p>
+        </div>
+    <% end %>
+</body>

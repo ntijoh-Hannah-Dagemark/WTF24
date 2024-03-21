@@ -2,26 +2,28 @@
 <% elsif @section == "sea" then verb = "Boat" %>
 <% else verb = "Train" %>
 <% end %>
-<div>
-    <h3>Create Thread</h3>
-    <form action="/threads/<%=@section%>" method="POST">
-        <input type="text" name="title" placeholder="Post Title">
-        <input type="text" name="content" placeholder="Post Contents">
-        <button type="submit">Submit post to thread</button>
-    </form>
-</div>
+
 <body>
-    <h2>Welcome to the <%=verb%> threads</h2>
-    <% for thread in @threads do %>
-        <% for post in @lPosts do %>
-            <% if post["id"] == thread["postId"] %>
-                <% lPost = post %>
-            <% end %>
-        <% end %>
+    <div class="threads">
         <div>
-        <h3><%=thread["id"]%></h3>
-        <h5><%=lPost["title"]%></h5>
-        <p><%=lPost["content"]%></p>
+            <h3>Create Thread</h3>
+            <form action="/threads/<%=@section%>" method="POST">
+                <input type="text" name="title" placeholder="Post Title">
+                <input type="text" name="content" placeholder="Post Contents">
+                <button type="submit">Submit post to thread</button>
+            </form>
         </div>
-    <% end %>
+        <h2>Welcome to the <%=verb%> threads</h2>
+        <% for thread in @threads do %>
+            <% for post in @lPosts do %>
+                <% if post["id"] == thread["postId"] %>
+                    <% lPost = post %>
+                <% end %>
+            <% end %>
+            <div class="borderBox">
+            <h3><%=lPost["title"]%></h3>
+            <p><%=lPost["content"]%></p>
+            </div>
+        <% end %>
+    </div>
 </body>

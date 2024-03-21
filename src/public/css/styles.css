@@ -1,0 +1,101 @@
+#general {
+    display: grid;
+    position: fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    background-color: black;
+    grid-template-rows: 1fr 6fr 1fr;
+    grid-template-columns: auto;
+    grid-template-areas: 
+      "top"
+      "middle"
+      "bottom";
+}
+header {
+    grid-area: top;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+
+    background-color: blueviolet;
+}
+body {
+    grid-area: middle;
+    display: flex;
+}
+footer {
+    grid-area: bottom;
+    background-color: greenyellow;
+}
+
+#bLogin {
+    grid-area: login;
+    background-color: red
+}
+#banner {
+    grid-area: banner;
+    background-color: green;
+}
+#bProfile {
+    grid-area: profile;
+    background-color: red
+}
+
+.frontPage {
+    background-color: gray;
+    display: grid;
+    grid-template-rows: 80%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+      "button1 button2 button3";
+    row-gap: 10px;
+    column-gap: 10px;
+}
+#bRail {
+    grid-area: button1;
+}
+#bSea {
+    grid-area: button2;
+}
+#bAir {
+    grid-area: button3;
+}
+
+.login {
+    background-color: white;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: auto;
+    grid-template-areas: 
+      "."
+      "."
+      ".";
+}
+
+.threads {
+    background-color: gray;
+    color: white;
+}
+
+.borderBox {
+    border: 2px;
+    border-color: black;
+    border-style: double;
+    display: flex;
+    flex-direction: column;
+}
+
+a:link {
+    color: black;
+}
+a:visited {
+    color: lightslategray;
+}
+a:hover {
+    color: gray;
+}

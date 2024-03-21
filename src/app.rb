@@ -25,7 +25,7 @@ class App < Sinatra::Base
         erb :login
     end
 
-    post '/login/login' do 
+    post '/login/login' do
         mail = params['mail']
         cleartext_password = params['password']
         user = db.execute('SELECT * FROM user WHERE mail = ?', mail).first
@@ -59,9 +59,13 @@ class App < Sinatra::Base
     end
 
     get '/user' do
-        @user_profile = db.execute('SELECT * FROM user WHERE id = ?', session[:user_id]).first
-        @user_posts = db.execute('SELECT * FROM post WHERE authorId = ?', session[:user_id])
-        erb :profile
+        if session[:user_id] == nil
+            redirect "/"
+        else
+            @user_profile = db.execute('SELECT * FROM user WHERE id = ?', session[:user_id]).first
+            @user_posts = db.execute('SELECT * FROM post WHERE authorId = ?', session[:user_id])
+            erb :profile
+        end
     end
 
     get '/threads/:section' do |section|

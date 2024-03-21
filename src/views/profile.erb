@@ -3,7 +3,7 @@
     <p><%=@user_profile["mail"]%></p>
     <p><%=@user_profile["status"]%></p>
 </div>
-<body>
+<div>
     <h2>Your Posts</h2>
     <% for post in @user_posts do %>
         <div>
@@ -12,4 +12,4 @@
             <p><%=post["content"]%></p>
         </div>
     <% end %>
-</body>
+</div>

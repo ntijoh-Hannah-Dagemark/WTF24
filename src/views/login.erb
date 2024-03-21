@@ -1,20 +1,24 @@
-<% if @mode == "login" then %>
-    <form action="/login/login" method="POST">
-        <input type="email" name="mail" id="" placeholder="YourMail@mail.com">
-        <input type="password" name="password" id="" placeholder="Password">
-        <button type="submit">Login</button>
-    </form>
-    <p>Don't have an account?<a href="/login/signup">Create One Here</a></p>
-<% else %>
-    <form action="/login/signup" method="POST">
-        <input type="text" name="username" id="" placeholder="Username">
-        <input type="email" name="mail" id="" placeholder="YourMail@mail.com">
-        <input type="password" name="password" id="" placeholder="Password">
-        <select name="status" id="">
-            <option value="writer">Writer</option>
-            <option value="facter">Fact Checker</option>
-            <option value="admin">Admin</option>
-        </select>
-        <button type="submit">Sign Up</button>
-    </form>
-<% end %>
+<body>
+    <div class=login>
+    <% if @mode == "login" then %>
+        <form class="borderBox" action="/login/login" method="POST">
+            <input type="email" name="mail" id="" placeholder="YourMail@mail.com">
+            <input type="password" name="password" id="" placeholder="Password">
+            <button type="submit">Login</button>
+        </form>
+        <p class="borderBox">Don't have an account?<a href="/login/signup">Create One Here</a></p>
+    <% else %>
+        <form class="borderBox" action="/login/signup" method="POST">
+            <input type="text" name="username" id="" placeholder="Username">
+            <input type="email" name="mail" id="" placeholder="YourMail@mail.com">
+            <input type="password" name="password" id="" placeholder="Password">
+            <select name="status" id="">
+                <option value="writer">Writer</option>
+                <option value="facter">Fact Checker</option>
+                <option value="admin">Admin</option>
+            </select>
+            <button type="submit">Sign Up</button>
+        </form>
+    <% end %>
+    </div>
+</body>

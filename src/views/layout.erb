@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <title>Ghost Hulls</title>
 </head>
-<header><h1>Ghost Hulls!</h1></header>
-<body>
-    <%= yield %>
-</body>
-<footer>
-    <h1>Ghost Hulls Inc</h1>
-    <a href="/">Home</a>
-</footer>
+<div id="general">
+    <header>
+        <button id="bLogin"><a href="/login/login">Login</a></button>
+        <h1 id="banner">Ghost Hulls!</h1>
+        <button id="bProfile"><a href="/user">Profile Page</a></button>
+    </header>
+    <body>
+        <%= yield %>
+    </body>
+    <footer>
+        <h1>Ghost Hulls Inc</h1>
+        <a href="/">Home</a>
+    </footer>
+</div>
 </html>
